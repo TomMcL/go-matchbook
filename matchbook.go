@@ -12,7 +12,7 @@ import (
 )
 
 var connectionEndpoints = map[string][]string{
-	"login.json":      {"https://api.matchbook.com/bpapi/rest/security/session", "POST"},
+	"login":      {"https://api.matchbook.com/bpapi/rest/security/session", "POST"},
 	"logout":     {"https://api.matchbook.com/bpapi/rest/security/session", "DELETE"},
 	"getSession": {"https://api.matchbook.com/bpapi/rest/security/session", "GET"},
 }
