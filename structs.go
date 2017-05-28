@@ -47,58 +47,60 @@ type EventsResult struct {
 }
 
 type Event struct {
-	Id int `json:"id"`
-	Name string `json:"name"`
-	SportId int `json:"sport-id"`
-	Start time.Date `json:"start"`
-	InRunningFlag bool `json:"in-running-flag"`
-	AllowLiveBetting bool `json:"allow-live-betting"`
-	CategoryId []int `json:"category-id"`
-	Status string `json:"status"`
-	Volume float32 `json:"volume"`
-	Markets []Market `json:"markets"`
-	MetaTags []MetaTag `json:"meta-tags"`
+	Id               int       `json:"id"`
+	Name             string    `json:"name"`
+	SportId          int       `json:"sport-id"`
+	Start            time.Date `json:"start"`
+	InRunningFlag    bool      `json:"in-running-flag"`
+	AllowLiveBetting bool      `json:"allow-live-betting"`
+	CategoryId       []int     `json:"category-id"`
+	Status           string    `json:"status"`
+	Volume           float32   `json:"volume"`
+	Markets          []Market  `json:"markets"`
+	MetaTags         []MetaTag `json:"meta-tags"`
 }
 
 type Market struct {
-	Live book `json:"live"`
-	EventId int `json:"event-id"`
-	Id int `json:"id"`
-	Name string `json:"name"`
-	Runners []runner `json:"runners"`
-	Start time.Date `json:"start"`
-	InRunningFlag bool `json:"in-running-flag"`
-	AllowLiveBetting bool `json:"allow-live-betting"`
-	Status string `json:"status"`
-	MarketType string `json:"market-type"`
-	Type string `json:"type"`
-	Volume float32 `json:"volume"`
-	BackOverround float32 `json:"back-overround"`
-	LayOverround float32 `json:"lay-overround"`
+	Live             book      `json:"live"`
+	EventId          int       `json:"event-id"`
+	Id               int       `json:"id"`
+	Name             string    `json:"name"`
+	Runners          []runner  `json:"runners"`
+	Start            time.Date `json:"start"`
+	InRunningFlag    bool      `json:"in-running-flag"`
+	AllowLiveBetting bool      `json:"allow-live-betting"`
+	Status           string    `json:"status"`
+	MarketType       string    `json:"market-type"`
+	Type             string    `json:"type"`
+	Volume           float32   `json:"volume"`
+	BackOverround    float32   `json:"back-overround"`
+	LayOverround     float32   `json:"lay-overround"`
 }
 
 type Runner struct {
-	Prices []PriceDetail `json:"prices"`
-	EventId int `json:"event-id"`
-	Id int `json:"id"`
-	MarketId int `json:"market-id"`
-	Name string `json:"name"`
-	Status string `json:"status"`
-	Volume float32 `json:"volume"`
-	EventParticipantId int `json:"event-participant-id"`
+	Prices             []PriceDetail `json:"prices"`
+	EventId            int           `json:"event-id"`
+	Id                 int           `json:"id"`
+	MarketId           int           `json:"market-id"`
+	Name               string        `json:"name"`
+	Status             string        `json:"status"`
+	Volume             float32       `json:"volume"`
+	EventParticipantId int           `json:"event-participant-id"`
 }
 
 type PriceDetail struct {
 	AvailableAmount float32 `json:"available-amount"`
-	Currency string `json:"currency"`
-	OddsType string `json:"odds-type"`
-	Odds float32 `json:"odds"`
-	DecimalOdds float32 `json: decimal-odds`
-	Side string `json:"side"`
-	ExchangeType string `json:"exchange-type"`
+	Currency        string  `json:"currency"`
+	OddsType        string  `json:"odds-type"`
+	Odds            float32 `json:"odds"`
+	DecimalOdds     float32 `json: decimal-odds`
+	Side            string  `json:"side"`
+	ExchangeType    string  `json:"exchange-type"`
 }
 
-func main{
-	er := Sport{}
-
+type MetaTag struct {
+	Id      int    `json:"id"`
+	Name    string `json:"name"`
+	Type    string `json:"type"`
+	UrlName string `json:"url-names"`
 }
