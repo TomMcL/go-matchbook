@@ -118,7 +118,7 @@ func (s *Session) doRequest(key, method string, body *strings.Reader) ([]byte, e
 func (s *Session) Login() ([]byte, error) {
 
 	body := strings.NewReader("username=" + s.config.Username + "&password=" + s.config.Password)
-	resp, err := s.doRequest("login.json", "", body)
+	resp, err := s.doRequest("login", "", body)
 	return resp, err
 
 }

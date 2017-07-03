@@ -1,5 +1,9 @@
 package matchbook
 
+import (
+	"time"
+)
+
 type LoginResponse struct {
 	SessionToken string         `json:"session-token"`
 	UserId       string         `json:"user-id"`
@@ -50,7 +54,7 @@ type Event struct {
 	Id               int       `json:"id"`
 	Name             string    `json:"name"`
 	SportId          int       `json:"sport-id"`
-	Start            time.Date `json:"start"`
+	Start            time.Time `json:"start"`
 	InRunningFlag    bool      `json:"in-running-flag"`
 	AllowLiveBetting bool      `json:"allow-live-betting"`
 	CategoryId       []int     `json:"category-id"`
@@ -61,12 +65,12 @@ type Event struct {
 }
 
 type Market struct {
-	Live             book      `json:"live"`
+	Live             bool      `json:"live"`
 	EventId          int       `json:"event-id"`
 	Id               int       `json:"id"`
 	Name             string    `json:"name"`
-	Runners          []runner  `json:"runners"`
-	Start            time.Date `json:"start"`
+	Runners          []Runner  `json:"runners"`
+	Start            time.Time `json:"start"`
 	InRunningFlag    bool      `json:"in-running-flag"`
 	AllowLiveBetting bool      `json:"allow-live-betting"`
 	Status           string    `json:"status"`
@@ -93,7 +97,7 @@ type PriceDetail struct {
 	Currency        string  `json:"currency"`
 	OddsType        string  `json:"odds-type"`
 	Odds            float32 `json:"odds"`
-	DecimalOdds     float32 `json: decimal-odds`
+	DecimalOdds     float32 `json:"decimal-odds"`
 	Side            string  `json:"side"`
 	ExchangeType    string  `json:"exchange-type"`
 }
